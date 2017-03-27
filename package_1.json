@@ -1,0 +1,19 @@
+{
+  "name": "node-api",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "firebase": "^3.7.3",
+    "twilio": "^2.11.1"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "nodemon": "^1.11.0",
+    "serve": "^5.1.1"
+  },
+  "engines": {
+    "node": "^4.6.0",
+    "npm": "^3.10.8"
+  }
+}

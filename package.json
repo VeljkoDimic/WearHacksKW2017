@@ -1,0 +1,35 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "run": "serve .",
+    "start": "npm run build",
+    "build": "browserify script.js -t babelify --outfile bundle.js",
+    "watch": "nodemon --exec 'npm run build'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougouk/WearHacksKW2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougouk/WearHacksKW2017/issues"
+  },
+  "homepage": "https://github.com/dougouk/WearHacksKW2017#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "firebase": "^3.7.3",
+    "twilio": "^2.11.1"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "nodemon": "^1.11.0",
+    "serve": "^5.1.1"
+  },
+  "engines": {
+    "node": "4.1.1"
+  }
+}

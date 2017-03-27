@@ -1,0 +1,47 @@
+#homepage-button{
+  height: 130px;
+  width: 100px;
+}
+
+#mNavBar{
+  height: 110px;
+}
+.homepage-button-link{
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.modal-subButton{
+  max-width: 100%;
+  align-content: flex-end;
+}
+
+.mRowModel{
+  float:left;
+  height:100px;
+}
+.mRowModel:nth-child(an+b){
+  width: 33%;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.full {
+    background: url(../res/Asset1.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+}
+
+.modal_opacity{
+  background-color: rgba(255, 255, 255, 0.7);
+  /*background-color: rgba(37, 88, 117, 0.4);*/
+}

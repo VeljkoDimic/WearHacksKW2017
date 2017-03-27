@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <title>WearHacksKW2017</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/patient.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- <script src="js/firebaseAuth.js">
+      // Initialize Firebase
+    </script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script> -->
+    <!-- <script src="js/firebaseAuth.js">  // Initialize Firebase</script>
+    <script src="database/storage.js"></script> -->
+    <script src="bundle.js"></script>
+</head>
+
+<body id="page-top" class="index full">
+  <div class="page-header" id="mNavBar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="res/logo.png" style="height:110px"/>
+        </div>
+        <div class="col-sm-3">
+          <h1 class="center-block bd-title" style="font-size:8rem">Safescription</h1>
+        </div>
+      </div><!--row-->
+    </div><!--Page Header -->
+  </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-6">
+                <a href="#newPatientModal" class="portfolio-link" data-toggle="modal">
+                  <img src="res/NewPatientButton.png" class="img-responsive" alt="">
+                </a>
+            </input>
+          </div>
+          <div class="col-lg-6">
+              <a href="#existingPatientsModal" class="portfolio-link" id="aExistingPatientModal" data-toggle="modal">
+                <img src="res/ExistingPatientsButton.png" class="img-responsive" alt="">
+              </a>
+          </div>
+        </div>
+    </div>
+
+    <!-- Button modals -->
+    <div class="portfolio-modal modal fade col-lg-12" id="newPatientModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content modal_opacity">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body" id="new_patient">
+                            <img src="res/darker plus.png"/>
+                            <div class="row">
+                              <h1>New patient</h1>
+                              <hr class="star-primary">
+                            </div>
+
+                            <form>
+                              <label for="inputlg">Health Care Card Number</label>
+                              <input class="form-control input-lg" type="text" id="inputPatientID"/>
+                            </form>
+
+                            <form>
+                              <label for="inputlg">Name</label>
+                              <input class="form-control input-lg" type="text" id="inputPatientName"/>
+                            </form>
+
+                            <form>
+                              <label for="inputlg">Age</label>
+                              <input class="form-control input-lg" type="text" id="inputPatientAge"/>
+                            </form>
+
+                            <form>
+                              <label for="inputlg">Phone number</label>
+                              <input class="form-control input-lg" type="text" id="inputPatientPhone"/>
+                            </form>
+
+                            <div class="form-group">
+                              <label for="inputPatientMethod">Select Method</label>
+                              <select class="form-control input-lg" id="inputPatientMethod">
+                                <option value="0">Text</option>
+                                <option value="1">Call</option>
+                                <option value="2">Both</option>
+                              </select>
+                            </div>
+                            <br>
+
+                             <div id="prescription-container">
+
+                            </div>
+
+                            <div class="row pull-right">
+                              <div class="col-sm-6">
+                                <input class="modal-subButton" id="btnAddSubscription" type="image" src="res/lighter plus.png"/>
+                              </div>
+                              <div class="col-sm-6">
+                              <label for="inputlg">Add subscription</label>
+                              </div>
+
+                            </div>
+
+                            <br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                            <button type="button" class="btn btn-default" id="btnSaveNewPatient" data-toggle="modal" data-target="#modalSuccessfullySaved" data-dismiss="modal"><i class="fa fa-times"></i>Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Successfully Saved Modal -->
+    <div id="modalSuccessfullySaved" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Success!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <img src="res/person.png" style="height:40px"/>
+              </div>
+              <div clas="col-sm-3">
+                <p>New patient has been successfully added to the database</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Existing Patients Modal -->
+    <div class="portfolio-modal modal fade" id="existingPatientsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content modal_opacity">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body" id="new_patient">
+                            <img src="res/Person.png"/>
+                            <div class="row">
+                              <h1>Patients</h1>
+                              <hr class="star-primary">
+                            </div>
+
+
+                            <div class="row">
+                              <div class="col-lg-12">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Search for...">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                  </span>
+                                </div><!-- /input-group -->
+                              </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+
+                            <div class=row>
+                              <div class="col-lg-5">
+
+                                <h2>List of Patients</h2>
+                                <ul class="list-group scrollable-menu" id="existingPatientList">
+                                  <li class="list-group-item">First item</li>
+                                </ul>
+
+                                <ul class="list-group scrollable-menu" id="prescriptionList">
+                                </ul>
+                              </div>
+
+                              <div class="col-lg-7">
+                                <h2>Profile Preview</h2>
+                                <div class="row">
+                                  <label>Name</label>
+                                  <!-- <h1 id="existingPatientName">Name goes here</h1> -->
+                                  <input class="form-control input-lg" type="text" id="existingPatientName"/>
+                                </div>
+                                <div class="row">
+                                  <label>Phone Number</label>
+                                  <!-- <h1 id="existingPatientPhone"></h1> -->
+                                  <input class="form-control input-lg" type="text" id="existingPatientPhone"/>
+                                </div>
+                                <div class="row">
+                                  <label>Age</label>
+                                  <!-- <h1 id="existingPatientAge"></h1> -->
+                                  <input class="form-control input-lg" type="text" id="existingPatientAge"/>
+                                </div>
+
+
+
+                                  <div id="existing-prescription-container">
+                                  </div><!--existing-prescription-container-->
+                              </div><!--col-lg-7-->
+
+                              <div class="row pull-right">
+                                <div class="col-sm-6">
+                                  <input class="modal-subButton" id="btnAddSubscription-existing" type="image" src="res/lighter plus.png"/>
+                                </div>
+                                <div class="col-sm-6">
+                                <label for="inputlg">Add subscription</label>
+                                </div>
+
+                              </div>
+
+                            <br>
+                            <div class="row">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                              <button type="button" class="btn btn-default" id="btnSaveNewPrescription" data-toggle="modal" data-target="#modalSuccessfullySaved" data-dismiss="modal"><i class="fa fa-times"></i> Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
